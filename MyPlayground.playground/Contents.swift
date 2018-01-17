@@ -2,6 +2,47 @@
 
 import UIKit
 
+// January 16, 2018
+// Make a method that prints every number divisible by X, between 0 and Y.
+func divisibleBy(_ num1: Int, betweenZeroAnd num2: Int) {
+    
+    if num1 > num2 {
+        return
+    }
+    
+    for number in num1...num2 {
+        if number % num1 == 0 {
+            print(number)
+        }
+    }
+}
+//test
+//divisibleBy(3, betweenZeroAnd: 12)
+
+// Make a method that prints every prime number between 0 and Y.
+func primeNumbers(betweenZeroAnd num: Int) {
+    
+    if num <= 2 {
+        return
+    }
+    
+    for number in 3...num {
+        
+        var isPrime = true
+        
+        for num in 2...number-1 {
+            if number % num == 0 {
+                isPrime = false
+            }
+        }
+        
+        if isPrime {
+            print(number)
+        }
+    }
+}
+//test
+//primeNumbers(betweenZeroAnd: 130)
 
 // January 15, 2018 -- Handling Optionals
 class Person {
@@ -34,6 +75,6 @@ class Person {
 let me = Person(name: "Dan")
 me.favoriteColor = "black"
 me.favoriteMovie = "The Florida Project"
-print(me.favoriteColor!)
-print(me.favoriteMovie)
+//print(me.favoriteColor!)
+//print(me.favoriteMovie)
 me.printFavorites()
